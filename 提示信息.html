@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/*1*/
+			#t1{height: 80px;}
+			.a1kuang{cursor: pointer;}
+			.a2queding{
+			    background-color:red;
+			    font-size: 12px;
+			    width: 50px;
+			    margin-top: -10px;
+				margin-left: 30px;
+			    display: none;
+			   }
+			   /*2*/
+			#t2{position: relative;}
+			#t2 p,span {cursor: pointer;}
+			.b{
+			    width: 200px;
+			    height: 100px;
+			    position: relative;
+			    top: 190%;
+			    left: 0;
+			    right: 0;
+			    background-color:grey;
+			    display: none;
+			    }
+				/* 第四题 */
+				#t4{
+					width: 451px;
+					height: 551px;
+					border: 1px solid;
+					margin-top: 100px;
+					position: absolute;								
+					}
+				#t4 li {
+					display: block;
+					float: left;
+					width: 100px;
+					list-style: none;
+				}
+				/* 第五题 */
+				#d-1 {
+				width: 250px;
+				height: 40px;
+				margin-top: 800px;
+				position: relative;
+				}
+				.d-2 {
+					float: right;
+					position: absolute;
+					right: 0;
+					top: 8px;
+				}
+				.d-3 {
+				float: right;
+				position: absolute;
+				right: 0;
+				top: 8px;
+				}
+					#d-1 .input {
+					width: 250px;
+					height: 30px;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="t1">
+			<h1>提示信息</h1>
+			<label>请点击: </label>
+			<button class="a1kuang">确定</button>
+			<div class="a2queding">
+				<p>确定信息</p>
+			</div>
+		</div>
+		<div id="t2">
+			<p>登陆</p>
+			<div class="b">
+		    <span>X</span>
+			</div>
+			</div>
+		    <h2>搜索框</h2>
+		    <div id="t3">
+		    <input type="text" class="n" value="搜索" />
+		    </div>
+			<div id="t4">
+				<img src="images/1.png" alt="" class="i-5" width="100%" height="80%"/>
+					<ul>
+						<li class="i-1"><img src="./images/1.1.png" width="70px"/></li>
+						<li class="i-2"><img src="./images/2.2.png" width="70px"/></li>
+						<li class="i-3"><img src="./images/3.3.png" width="70px"/></li>
+						<li class="i-4"><img src="./images/4.4.png" width="70px"/></li>
+					</ul>
+			</div>
+		
+			  <div id="d-1">
+			  			<img src="./images/eyenone.png" class="d-3"/>
+			  			<input type="password" value=""  class="input" />
+			  		</div>
+		<script>
+			//1
+			const a1 = document.querySelector('.a1kuang');
+			const a2 = document.querySelector('.a2queding');
+			a1.onmousemove = function() {
+			a2.style.display = 'block';
+			}
+			a1.onmouseout = function() {
+			a2.style.display = 'none';}
+			//2
+			const b = document.querySelector('#t2 p');
+			const b2 = document.querySelector('#t2 .b');
+			const b3 = document.querySelector('#t2 .b span')
+			b.onclick = function() {
+			b2.style.display = 'block';}
+			b3.onclick = function() {
+			b2.style.display = 'none';}
+			//3
+			const n = document.querySelector('#t3 .n');
+			n.onfocus = function() {
+			if (n.value === '搜索') {
+			n.value = '';
+			}}
+			n.onblur = function(){
+			if (n.value === '') {
+			n.value = '搜索';
+			}}
+			//4
+			document .querySelector('#sencend .i-1').onmouseover = function(){
+			document.querySelector('#sencend .i-5').src = './images/1.1.png';}
+			document .querySelector('#sencend .i-2').onmouseover = function(){
+			document.querySelector('#sencend .i-5').src = './images/2.2.png';}
+			document .querySelector('#sencend .i-3').onmouseover = function(){
+			document.querySelector('#sencend .i-5').src = './images/3.3.png';}
+			document .querySelector('#sencend .i-4').onmouseover = function(){
+			document.querySelector('#sencend .i-5').src = './images/4.4.png';}
+			//5
+			let da = 2;
+			document.querySelector('#d-1 .d-3').onclick = function() {
+			if (da % 2 == 0) {
+				document.querySelector('#d-1 .d-3').src = './images/eyesee.png';
+				document.querySelector('#d-1 input').type = 'text';
+			}else {
+				document.querySelector('#d-1 .d-3').src = './images/eyenone.png';
+				document.querySelector('#d-1 input').type = 'password';
+			}
+			da++;
+			}
+		</script>
+	</body>
+</html>
